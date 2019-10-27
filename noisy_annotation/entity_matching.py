@@ -3,14 +3,14 @@ from flashtext import KeywordProcessor
 
 class Entity(object):
     
-    """A data structure to represent an entity and it's metadata.
+    """A data structure to represent an entity and its metadata.
     
     :param entity_id: An identifier for the entity.
     :type entity_id: int
     :param entity_type: The type of entity.
     :type entity_type: str
     :param synonyms: A list of synonyms of this entity (the first synonym is 
-    the preferred term).
+        the preferred term).
     :type synonyms: list
     """
 
@@ -28,7 +28,16 @@ class EntityMatch(object):
     
     """A data structure for entity matches.
     
-    :param 
+    :param entity: The matched entity.
+    :type entity: Entity
+    :param start: The starting character of the match.
+    :type start: int
+    :param end: The ending character of the match.
+    :type end: int
+    :param substring: The matched substring.
+    :type substring: str
+    :param snippet: A snippet showing the match in context.
+    :type snippet: str
     """
 
     def __init__(self, 
@@ -50,7 +59,7 @@ class EntityMatcher(object):
     """An object that can extract matches of entities in text.
     
     :param case_sensitive: Whether the entity matcher should be case sensitive, 
-    defaults to False.
+        defaults to False.
     :type case_sensitive: bool
     """
 
@@ -101,7 +110,7 @@ class EntityMatcher(object):
         
         :param text: A text to extract matches from.
         :type text: str
-        ...
+        
         :return: A list of EntityMatch objects extracted from the text.
         :type: list
         """
@@ -126,7 +135,7 @@ class EntityMatcher(object):
 
         :param entity_id: An entity_id string.
         :type entity_id: str
-        ...
+        
         :return: True if the entity_id is already present in the matcher.
         :rtype: bool
         """

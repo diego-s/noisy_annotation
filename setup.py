@@ -12,5 +12,7 @@ setup(
         "flashtext", 
         "jupyter", 
         "pytest", 
+        "sphinx", 
+        "sphinx_rtd_theme", 
     ],
 )

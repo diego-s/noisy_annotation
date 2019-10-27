@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to noisy_annotation’s documentation! &mdash; noisy_annotation v0.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> noisy_annotation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to noisy_annotation’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#module-noisy_annotation.entity_matching">Entity Matching</a></li>
+<li><a class="reference internal" href="#module-noisy_annotation.relation_matching">Relation Matching</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">noisy_annotation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to noisy_annotation’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-noisy-annotation-s-documentation">
+<h1>Welcome to noisy_annotation’s documentation!<a class="headerlink" href="#welcome-to-noisy-annotation-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="module-noisy_annotation.entity_matching">
+<span id="entity-matching"></span><h1>Entity Matching<a class="headerlink" href="#module-noisy_annotation.entity_matching" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="noisy_annotation.entity_matching.Entity">
+<em class="property">class </em><code class="sig-prename descclassname">noisy_annotation.entity_matching.</code><code class="sig-name descname">Entity</code><span class="sig-paren">(</span><em class="sig-param">entity_id</em>, <em class="sig-param">synonyms</em>, <em class="sig-param">entity_type</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.entity_matching.Entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A data structure to represent an entity and its metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entity_id</strong> (<em>int</em>) – An identifier for the entity.</p></li>
+<li><p><strong>entity_type</strong> (<em>str</em>) – The type of entity.</p></li>
+<li><p><strong>synonyms</strong> (<em>list</em>) – A list of synonyms of this entity (the first synonym is 
+the preferred term).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="noisy_annotation.entity_matching.EntityMatch">
+<em class="property">class </em><code class="sig-prename descclassname">noisy_annotation.entity_matching.</code><code class="sig-name descname">EntityMatch</code><span class="sig-paren">(</span><em class="sig-param">entity</em>, <em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">substring</em>, <em class="sig-param">snippet</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.entity_matching.EntityMatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>A data structure for entity matches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entity</strong> (<a class="reference internal" href="#noisy_annotation.entity_matching.Entity" title="noisy_annotation.entity_matching.Entity"><em>Entity</em></a>) – The matched entity.</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – The starting character of the match.</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The ending character of the match.</p></li>
+<li><p><strong>substring</strong> (<em>str</em>) – The matched substring.</p></li>
+<li><p><strong>snippet</strong> (<em>str</em>) – A snippet showing the match in context.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="noisy_annotation.entity_matching.EntityMatcher">
+<em class="property">class </em><code class="sig-prename descclassname">noisy_annotation.entity_matching.</code><code class="sig-name descname">EntityMatcher</code><span class="sig-paren">(</span><em class="sig-param">case_sensitive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.entity_matching.EntityMatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object that can extract matches of entities in text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>case_sensitive</strong> (<em>bool</em>) – Whether the entity matcher should be case sensitive, 
+defaults to False.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="noisy_annotation.entity_matching.EntityMatcher.add_entity">
+<code class="sig-name descname">add_entity</code><span class="sig-paren">(</span><em class="sig-param">entity</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.entity_matching.EntityMatcher.add_entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an entity to the matcher.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entity</strong> (<a class="reference internal" href="#noisy_annotation.entity_matching.Entity" title="noisy_annotation.entity_matching.Entity"><em>Entity</em></a>) – An Entity object to be added.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="noisy_annotation.entity_matching.EntityMatcher.get_matches">
+<code class="sig-name descname">get_matches</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.entity_matching.EntityMatcher.get_matches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of matches from text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – A text to extract matches from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of EntityMatch objects extracted from the text.</p>
+</dd>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="noisy_annotation.entity_matching.EntityMatcher.has_id">
+<code class="sig-name descname">has_id</code><span class="sig-paren">(</span><em class="sig-param">entity_id</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.entity_matching.EntityMatcher.has_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if the entity_id is already present in the matcher.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entity_id</strong> (<em>str</em>) – An entity_id string.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the entity_id is already present in the matcher.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-noisy_annotation.relation_matching">
+<span id="relation-matching"></span><h1>Relation Matching<a class="headerlink" href="#module-noisy_annotation.relation_matching" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="noisy_annotation.relation_matching.Relation">
+<em class="property">class </em><code class="sig-prename descclassname">noisy_annotation.relation_matching.</code><code class="sig-name descname">Relation</code><span class="sig-paren">(</span><em class="sig-param">relation_id</em>, <em class="sig-param">entities</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.relation_matching.Relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A data structure representing a relation between entities and its 
+metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>relation_id</strong> (<em>str</em>) – An identifier for the relation.</p></li>
+<li><p><strong>entities</strong> (<em>list</em>) – A list of entities.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="noisy_annotation.relation_matching.RelationMatch">
+<em class="property">class </em><code class="sig-prename descclassname">noisy_annotation.relation_matching.</code><code class="sig-name descname">RelationMatch</code><span class="sig-paren">(</span><em class="sig-param">entity_matches</em>, <em class="sig-param">snippet</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.relation_matching.RelationMatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>A data structure for relation matches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entity_matches</strong> (<em>list</em>) – A list of EntityMatch objects.</p></li>
+<li><p><strong>snippet</strong> (<em>str</em>) – A snippet string.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="noisy_annotation.relation_matching.RelationMatcher">
+<em class="property">class </em><code class="sig-prename descclassname">noisy_annotation.relation_matching.</code><code class="sig-name descname">RelationMatcher</code><a class="headerlink" href="#noisy_annotation.relation_matching.RelationMatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>A matcher to extract relations found in text.</p>
+<dl class="method">
+<dt id="noisy_annotation.relation_matching.RelationMatcher.add_relation">
+<code class="sig-name descname">add_relation</code><span class="sig-paren">(</span><em class="sig-param">relation</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.relation_matching.RelationMatcher.add_relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a relation to the matcher.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>relation</strong> (<a class="reference internal" href="#noisy_annotation.relation_matching.Relation" title="noisy_annotation.relation_matching.Relation"><em>Relation</em></a>) – A Relation object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="noisy_annotation.relation_matching.RelationMatcher.get_matches">
+<code class="sig-name descname">get_matches</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">max_span=200</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.relation_matching.RelationMatcher.get_matches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of relation matches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – A text to extract matches from.</p></li>
+<li><p><strong>max_span</strong> (<em>int</em>) – The maximum span (in characters) between the first 
+and last entity match of the resulting relation matches. If a 
+relation match is found with a longer distance, it is discarded.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of RelationMatch objects extracted from the text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="noisy_annotation.relation_matching.RelationMatcher.has_id">
+<code class="sig-name descname">has_id</code><span class="sig-paren">(</span><em class="sig-param">relation_id</em><span class="sig-paren">)</span><a class="headerlink" href="#noisy_annotation.relation_matching.RelationMatcher.has_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if the relation_id is already present in the matcher.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>relation_id</strong> (<em>str</em>) – An relation_id string.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the relation_id is already present in the matcher.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Diego Saldana
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -3,7 +3,8 @@ from noisy_annotation.entity_matching import EntityMatcher
 
 class Relation(object):
     
-    """A data structure representing a relation between entities.
+    """A data structure representing a relation between entities and its 
+    metadata.
 
     :param relation_id: An identifier for the relation.
     :type relation_id: str
@@ -166,10 +167,10 @@ class RelationMatcher(object):
         :param text: A text to extract matches from.
         :type text: str
         :param max_span: The maximum span (in characters) between the first 
-        and last entity match of the resulting relation matches. If a relation 
-        match is found with a longer distance, it is discarded.
+            and last entity match of the resulting relation matches. If a 
+            relation match is found with a longer distance, it is discarded.
         :type max_span: int
-        ...
+        
         :return: A list of RelationMatch objects extracted from the text.
         :rtype: list
         """
@@ -195,7 +196,7 @@ class RelationMatcher(object):
 
         :param relation_id: An relation_id string.
         :type relation_id: str
-        ...
+        
         :return: True if the relation_id is already present in the matcher.
         :rtype: bool
         """
