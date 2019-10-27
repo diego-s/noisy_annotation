@@ -22,3 +22,10 @@ The documentation can be built as follows
 cd documentation
 make html
 ```
+
+It was configured as follows
+
+- A sphinx configuration was generated using the sphinx-quickstart script.
+- The autodoc extension and the sphinx rtd theme were added to the conf.py.
+- .. automodule:: directives and its :members: were added to the index.rst 
+  file. 
