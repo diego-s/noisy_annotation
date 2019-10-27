@@ -8,7 +8,7 @@ relations.
 
 You can install the package from github as follows 
 ```
-pip install git+https://github.com/diego-s/noisy_annotation.git
+pip install "git+https://github.com/diego-s/noisy_annotation.git"
 ```
 
 
