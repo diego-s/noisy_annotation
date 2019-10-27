@@ -169,7 +169,7 @@ class RelationMatcher(object):
         and last entity match of the resulting relation matches. If a relation 
         match is found with a longer distance, it is discarded.
         :type max_span: int
-        ---
+        ...
         :return: A list of RelationMatch objects extracted from the text.
         :rtype: list
         """
