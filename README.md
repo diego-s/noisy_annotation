@@ -4,6 +4,11 @@ A package for automated noisy annotation of text vocabulary entities and
 relations.
 
 
+## Examples
+
+See the tests for a few simple examples of how to use noisy_annotation.
+
+
 ## Installation
 
 You can install the package from github as follows 
