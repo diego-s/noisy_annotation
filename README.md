@@ -3,6 +3,8 @@
 A package for automated noisy annotation of text vocabulary entities and 
 relations.
 
+This package is still in early stages. Suggestions and fixes are welcome.
+
 
 ## Examples
 
