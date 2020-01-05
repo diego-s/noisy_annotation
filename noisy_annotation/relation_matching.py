@@ -125,7 +125,7 @@ class RelationMatcher(object):
             else:
                 miss = True
                 break
-        return miss
+        return miss, match_list_tuple
         
     def add_relation(self, relation):
         """
@@ -149,7 +149,7 @@ class RelationMatcher(object):
                 self._relation_dict[entity_id] = set()
             self._relation_dict[entity_id].add(relation)
 
-    def get_matches(self, text, max_span=200, relation_matches=None):
+    def get_matches(self, text, max_span=200, entity_matches=None):
         """
         Get a list of relation matches.
         
@@ -159,8 +159,9 @@ class RelationMatcher(object):
             and last entity match of the resulting relation matches. If a 
             relation match is found with a longer distance, it is discarded.
         :type max_span: int
-        :param relation_matches: A list of pre-computed entity matches. If None,
+        :param entity_matches: A list of pre-computed entity matches. If None,
             entity matches are computed. Defaults to None.
+        :type entity_matches: list
         
         :return: A list of RelationMatch objects extracted from the text.
         :rtype: list
@@ -171,7 +172,8 @@ class RelationMatcher(object):
         match_list_tuples = []
         relations = self._get_matching_relations(entity_matches)
         for relation in relations:
-            miss = self._add_to_match_list(entity_match_dict, relation.entities)
+            miss, match_list_tuple = self._add_to_match_list(entity_match_dict, 
+                relation.entities)
             if not miss:
                 match_list_tuples.append(match_list_tuple)
         relation_matches = self._to_relation_matches(text, match_list_tuples, 
