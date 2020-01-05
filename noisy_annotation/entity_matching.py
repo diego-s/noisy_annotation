@@ -2,8 +2,8 @@ from flashtext import KeywordProcessor
 
 
 class Entity(object):
-    
-    """A data structure to represent an entity and its metadata.
+    """
+    A data structure to represent an entity and its metadata.
     
     :param entity_id: An identifier for the entity.
     :type entity_id: int
@@ -13,7 +13,6 @@ class Entity(object):
         the preferred term).
     :type synonyms: list
     """
-
     def __init__(self, 
         entity_id, 
         synonyms, 
@@ -25,8 +24,8 @@ class Entity(object):
 
 
 class EntityMatch(object):
-    
-    """A data structure for entity matches.
+    """
+    A data structure for entity matches.
     
     :param entity: The matched entity.
     :type entity: Entity
@@ -39,7 +38,6 @@ class EntityMatch(object):
     :param snippet: A snippet showing the match in context.
     :type snippet: str
     """
-
     def __init__(self, 
         entity, 
         start, 
@@ -55,14 +53,13 @@ class EntityMatch(object):
     
  
 class EntityMatcher(object):
-    
-    """An object that can extract matches of entities in text.
+    """
+    An object that can extract matches of entities in text.
     
     :param case_sensitive: Whether the entity matcher should be case sensitive, 
         defaults to False.
     :type case_sensitive: bool
     """
-
     def __init__(self, case_sensitive=False):
         self._keyword_processor = KeywordProcessor(
             case_sensitive=case_sensitive)
@@ -70,15 +67,13 @@ class EntityMatcher(object):
         self._id_entity_map = {}
         self._entity_ids = set()
 
-
     def add_entity(self, entity):
-        
-        """Add an entity to the matcher.
+        """
+        Add an entity to the matcher.
 
         :param entity: An Entity object to be added.
         :type entity: Entity
         """
-        
         if self.has_id(entity.entity_id):
             raise KeyError("entity_id '%s' already seen before." % \
                 entity.entity_id)
@@ -89,7 +84,6 @@ class EntityMatcher(object):
                 self._synonym_id_map[synonym] = set()
             self._synonym_id_map[synonym].add(entity.entity_id)
             self._keyword_processor.add_keyword(synonym)
-
 
     def _get_snippet(self, text, start, end):
         snippet = ""
@@ -103,10 +97,9 @@ class EntityMatcher(object):
             snippet += "..."
         return snippet
 
-            
     def get_matches(self, text):
-        
-        """Get a list of matches from text.
+        """
+        Get a list of matches from text.
         
         :param text: A text to extract matches from.
         :type text: str
@@ -114,7 +107,6 @@ class EntityMatcher(object):
         :return: A list of EntityMatch objects extracted from the text.
         :type: list
         """
-        
         matches = []
         keyword_matches = self._keyword_processor.extract_keywords(text, 
             span_info=True)
@@ -128,10 +120,9 @@ class EntityMatcher(object):
                 matches.append(match)
         return matches
 
-
     def has_id(self, entity_id):
-        
-        """Returns true if the entity_id is already present in the matcher.
+        """
+        Returns true if the entity_id is already present in the matcher.
 
         :param entity_id: An entity_id string.
         :type entity_id: str
@@ -139,5 +130,4 @@ class EntityMatcher(object):
         :return: True if the entity_id is already present in the matcher.
         :rtype: bool
         """
-        
         return entity_id in self._entity_ids

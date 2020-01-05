@@ -2,8 +2,8 @@ from noisy_annotation.entity_matching import EntityMatcher
 
 
 class Relation(object):
-    
-    """A data structure representing a relation between entities and its 
+    """
+    A data structure representing a relation between entities and its 
     metadata.
 
     :param relation_id: An identifier for the relation.
@@ -11,7 +11,6 @@ class Relation(object):
     :param entities: A list of entities.
     :type entities: list
     """
-
     def __init__(self, 
         relation_id, 
         entities, 
@@ -21,15 +20,14 @@ class Relation(object):
     
     
 class RelationMatch(object):
-    
-    """A data structure for relation matches.
+    """
+    A data structure for relation matches.
     
     :param entity_matches: A list of EntityMatch objects.
     :type entity_matches: list
     :param snippet: A snippet string.
     :type snippet: str
     """
-
     def __init__(self, 
         entity_matches, 
         snippet
@@ -39,16 +37,14 @@ class RelationMatch(object):
 
 
 class RelationMatcher(object):
-    
-    """A matcher to extract relations found in text."""
-    
-
+    """
+    A matcher to extract relations found in text.
+    """
     def __init__(self):
         self.entity_matcher = EntityMatcher()
         self._relations = []
         self._relation_dict = {}
         self._relation_ids = set()
-
 
     def _get_entity_match_dict(self, entity_matches):
         entity_match_dict = {}
@@ -58,7 +54,6 @@ class RelationMatcher(object):
                 entity_match_dict[entity_id] = set()
             entity_match_dict[entity_id].add(entity_match)
         return entity_match_dict
-
 
     def _highlight_text(self, text, entity_matches):
         offset = 0
@@ -70,7 +65,6 @@ class RelationMatcher(object):
                 text[end:]
             offset += 4
         return text
-        
         
     def _get_snippet(self, text, entity_matches):
         text = self._highlight_text(text, entity_matches)
@@ -84,7 +78,6 @@ class RelationMatcher(object):
             snippet += "..."
         return snippet
 
-
     def _get_relation_match(self, text, entity_matches, max_span):
         if max_span != None:
             min_position = min([m.end for m in entity_matches])
@@ -97,7 +90,6 @@ class RelationMatcher(object):
             snippet, 
         )
         return relation_match
-
 
     def _to_relation_matches(self, text, match_list_tuples, max_span):
         relation_matches = []
@@ -113,7 +105,6 @@ class RelationMatcher(object):
                     relation_matches.append(relation_match)
         return relation_matches
 
-
     def _get_matching_relations(self, entity_matches):
         matching_relations = set()
         for entity_match in entity_matches:
@@ -123,9 +114,9 @@ class RelationMatcher(object):
                 matching_relations = matching_relations.union(entity_relations)
         return matching_relations
 
-
-    def _add_to_match_list(self, entity_match_dict, match_list_tuple, entities):
+    def _add_to_match_list(self, entity_match_dict, entities):
         miss = False
+        match_list_tuple = []
         for i in range(len(entities)):
             entity_id = entities[i].entity_id
             match_list = entity_match_dict.get(entity_id, None)
@@ -136,10 +127,9 @@ class RelationMatcher(object):
                 break
         return miss
         
-        
     def add_relation(self, relation):
-        
-        """Add a relation to the matcher.
+        """
+        Add a relation to the matcher.
 
         :param relation: A Relation object.
         :type relation: Relation
@@ -159,10 +149,9 @@ class RelationMatcher(object):
                 self._relation_dict[entity_id] = set()
             self._relation_dict[entity_id].add(relation)
 
-
-    def get_matches(self, text, max_span=200):
-        
-        """Get a list of relation matches.
+    def get_matches(self, text, max_span=200, relation_matches=None):
+        """
+        Get a list of relation matches.
         
         :param text: A text to extract matches from.
         :type text: str
@@ -170,29 +159,28 @@ class RelationMatcher(object):
             and last entity match of the resulting relation matches. If a 
             relation match is found with a longer distance, it is discarded.
         :type max_span: int
+        :param relation_matches: A list of pre-computed entity matches. If None,
+            entity matches are computed. Defaults to None.
         
         :return: A list of RelationMatch objects extracted from the text.
         :rtype: list
         """
-        
-        entity_matches = self.entity_matcher.get_matches(text)
+        if entity_matches == None:
+            entity_matches = self.entity_matcher.get_matches(text)
         entity_match_dict = self._get_entity_match_dict(entity_matches)
         match_list_tuples = []
         relations = self._get_matching_relations(entity_matches)
         for relation in relations:
-            match_list_tuple = []
-            miss = self._add_to_match_list(entity_match_dict, match_list_tuple, 
-                relation.entities)
+            miss = self._add_to_match_list(entity_match_dict, relation.entities)
             if not miss:
                 match_list_tuples.append(match_list_tuple)
         relation_matches = self._to_relation_matches(text, match_list_tuples, 
             max_span)
         return relation_matches
 
-
     def has_id(self, relation_id):
-        
-        """Returns true if the relation_id is already present in the matcher.
+        """
+        Returns true if the relation_id is already present in the matcher.
 
         :param relation_id: An relation_id string.
         :type relation_id: str
@@ -200,5 +188,4 @@ class RelationMatcher(object):
         :return: True if the relation_id is already present in the matcher.
         :rtype: bool
         """
-        
         return relation_id in self._relation_ids
