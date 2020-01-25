@@ -97,6 +97,20 @@ class EntityMatcher(object):
             snippet += "..."
         return snippet
 
+    def find_entities_by_synonym(self, synonym):
+        """
+        Returns all entities having the given synonym.
+
+        :param synonym: A synonym string.
+        :type synonym: str
+        ...
+        :return: A list of Entity objects having the given synonym.
+        :rtype: list
+        """
+        ids = self._synonym_id_map[synonym]
+        entities = [self._id_entity_map[id] for id in ids]
+        return entities
+
     def get_matches(self, text):
         """
         Get a list of matches from text.
@@ -132,16 +146,12 @@ class EntityMatcher(object):
         """
         return entity_id in self._entity_ids
 
-    def find_entities_by_synonym(self, synonym):
+    def num_entities(self):
         """
-        Returns all entities having the given synonym.
+        Returns the number of entities in the matcher.
 
-        :param synonym: A synonym string.
-        :type synonym: str
         ...
-        :return: A list of Entity objects having the given synonym.
-        :rtype: list
+        :return: The number of entities in the matcher.
+        :rtype: int
         """
-        ids = self._synonym_id_map[synonym]
-        entities = [self._id_entity_map[id] for id in ids]
-        return entities
+        return len(self._entity_ids)
