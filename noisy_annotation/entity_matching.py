@@ -126,8 +126,22 @@ class EntityMatcher(object):
 
         :param entity_id: An entity_id string.
         :type entity_id: str
-        
+        ...
         :return: True if the entity_id is already present in the matcher.
         :rtype: bool
         """
         return entity_id in self._entity_ids
+
+    def find_entities_by_synonym(self, synonym):
+        """
+        Returns all entities having the given synonym.
+
+        :param synonym: A synonym string.
+        :type synonym: str
+        ...
+        :return: A list of Entity objects having the given synonym.
+        :rtype: list
+        """
+        ids = self._synonym_id_map[synonym]
+        entities = [self._id_entity_map[id] for id in ids]
+        return entities
